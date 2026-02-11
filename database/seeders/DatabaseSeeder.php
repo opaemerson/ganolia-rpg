@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Supplier;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,8 +14,6 @@ class DatabaseSeeder extends Seeder
             FunctionalitiesTableSeeder::class,
             SuperadminUserSeeder::class,
             AdminUserSeeder::class,
-            CategorySeeder::class,
-            SupplierSeeder::class,
         ]);
     }
 }
