@@ -8,14 +8,13 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Alpine + Tailwind (usado só no modal) -->
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0/dist/tailwind.min.css" rel="stylesheet">
 
-    <!-- assets -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <link rel="stylesheet" href="{{ asset('css/game.css') }}">
     <link rel="stylesheet" href="{{ asset('css/signup.css') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -32,7 +31,7 @@
         </div>
 
         <div class="text-center mb-4">
-            <h1 class="logo-text">PROJETO<span class="logo-highlight">EXEMPLO</span></h1>
+            <h1 class="logo-text">Ganolia<span class="logo-highlight">RPG</span></h1>
         </div>
 
         <div class="text-center mb-4">

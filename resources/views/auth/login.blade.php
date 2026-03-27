@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>PROJETO_NOME - Login</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
+    @vite(['resources/js/app.js'])
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/game.css') }}">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -23,7 +25,7 @@
     <div class="login-card">
         <div class="logo-container">
             {{-- <img src="{{ asset('images/logo.png') }}" alt="AgendaFlow Logo" class="logo-img"> --}}
-            <h1 class="logo-text">Projeto<span class="logo-flow">Exemplo</span></h1>
+            <h1 class="logo-text">Ganolia<span class="logo-flow">RPG</span></h1>
         </div>
 
         <div class="text-center mb-4">
@@ -41,7 +43,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M5.121 17.804A9 9 0 0112 15a9 9 0 016.879 2.804M12 12a5 5 0 100-10 5 5 0 000 10z" />
                 </svg>
-                <input type="text" class="form-control" id="login" name="login" placeholder="E-mail ou login" required>
+                <input type="text" class="form-control" id="login" name="login"  placeholder="E-mail ou login" required>
             </div>
 
             <div class="form-control-icon mb-3">

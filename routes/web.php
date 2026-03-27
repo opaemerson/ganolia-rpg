@@ -12,9 +12,6 @@ use App\Http\Controllers\Superadmin\DashboardController as SuperadminDashboardCo
 use App\Http\Controllers\Superadmin\ModuleController as SuperadminModuleController;
 use App\Http\Controllers\Superadmin\FunctionalityController as SuperadminFunctionalityController;
 
-
-Route::view('/ui-test', 'ui-test');
-
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::get('/signup', [AuthController::class, 'signUp'])->name('signup');
 

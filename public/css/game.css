@@ -1,0 +1,25 @@
+html, body, * {
+    cursor: url("/images/icons/cursor.png") 0 0, auto;
+}
+
+@media (min-resolution: 2dppx) {
+    html, body, * {
+        cursor: url("/images/icons/cursor.png") 0 0, auto;
+    }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="login"],
+input[type="search"],
+textarea, 
+select, 
+button, 
+a[role="button"] {
+    cursor: url("/images/icons/cursor.png") 0 0, auto !important;
+}
+.form-control-icon {
+    cursor: url("/images/icons/cursor.png") 0 0, auto;
+}

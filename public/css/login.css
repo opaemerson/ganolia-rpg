@@ -1,171 +1,207 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* login.css - Identidade medieval envelhecida (cursor removido) */
+
+/* Variáveis de tema */
+:root{
+  --gold-1: #b8862b;
+  --gold-2: #8f6b1a;
+  --patina: #6b4f2f;
+  --metal-dark: #3b2f26;
+  --accent-ruby: #8b1b1b;
+  --bg-wood: #efe6db;
+  --muted-text: #5a4f45;
+  --glass: rgba(255,255,255,0.06);
+  --radius: 12px;
+  --card-width: 420px;
 }
 
-html,
-body {
-    height: 100%;
-    overflow: hidden;
+/* Reset rápido */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Cinzel", "Merriweather", Georgia, serif;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.02) 100%),
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.02) 0 1px, transparent 1px 6px),
+    var(--bg-wood);
+  color:var(--muted-text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:40px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
-body {
-    background: linear-gradient(135deg, #f3e7ff 0%, #dbeafe 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1vh 1rem;
+/* Card central */
+.login-card{
+  width:var(--card-width);
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(250,246,240,0.98));
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+  border:1px solid rgba(59,47,38,0.12);
+  position:relative;
+  overflow:hidden;
 }
 
-.login-card {
-    background: white;
-    border-radius: 1.5rem;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    border: 1px solid #f3f4f6;
-    padding: 2rem;
-    max-width: 500px;
-    width: 100%;
-    max-height: 95vh;
-    overflow-y: auto;
+/* Subtle aged frame */
+.login-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.04), inset 0 -30px 60px rgba(0,0,0,0.03);
+  mix-blend-mode:multiply;
 }
 
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 2rem;
+/* Logo */
+.logo-container{ text-align:center; margin-bottom:12px; }
+.logo-text{
+  font-weight:700;
+  letter-spacing:0.6px;
+  color:var(--metal-dark);
+  font-size:22px;
+  margin:0;
+  display:inline-block;
+  padding:6px 12px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.02));
+  border-radius:8px;
+  border:1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+.logo-flow{
+  color:var(--gold-1);
+  font-weight:800;
+  margin-left:6px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.2);
 }
 
-.logo-img {
-    width: 64px;
-    height: 64px;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    object-fit: cover;
+/* Headings and text */
+h2.h5{ color:var(--metal-dark); margin-bottom:6px; }
+.text-muted{ color:rgba(59,47,38,0.6); }
+
+/* Form controls */
+.form-control{
+  width:100%;
+  padding:12px 14px 12px 44px;
+  border-radius:10px;
+  border:1px solid rgba(59,47,38,0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(245,240,235,0.98));
+  color:var(--metal-dark);
+  box-shadow: inset 0 -2px 6px rgba(0,0,0,0.03);
+  font-size:14px;
 }
 
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #1f2937;
+/* Icon wrappers */
+.form-control-icon{ position:relative; }
+.icon-left, .icon-right{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:20px;
+  height:20px;
+  color:var(--patina);
+  opacity:0.95;
+}
+.icon-left{ left:12px; }
+.icon-right{ right:12px; cursor:pointer; }
+
+/* Button primary custom */
+.btn-primary-custom{
+  background: linear-gradient(180deg, var(--gold-1), var(--gold-2));
+  border:1px solid rgba(0,0,0,0.18);
+  color:#fff;
+  font-weight:700;
+  padding:10px 14px;
+  border-radius:10px;
+  box-shadow: 0 6px 18px rgba(139,27,27,0.12), inset 0 -2px 0 rgba(0,0,0,0.08);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn-primary-custom:hover{
+  transform:translateY(-2px);
+  box-shadow: 0 10px 26px rgba(139,27,27,0.16), inset 0 -2px 0 rgba(0,0,0,0.06);
 }
 
-.logo-flow {
-    color: #4F46E5;
+/* Ghost button */
+.btn-ghost{
+  background:transparent;
+  border:1px dashed rgba(59,47,38,0.12);
+  color:var(--metal-dark);
+  padding:6px 10px;
+  border-radius:8px;
+  font-size:13px;
 }
 
-.form-control-icon {
-    position: relative;
+/* Social buttons */
+.social-btn{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,240,235,0.96));
+  border:1px solid rgba(59,47,38,0.08);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition:transform .12s ease;
+}
+.social-btn:hover{ transform:translateY(-3px); }
+.social-icon{ width:22px; height:22px; }
+
+/* Divider */
+.divider{
+  position:relative;
+  color:rgba(59,47,38,0.5);
+  margin:12px 0;
+  font-size:13px;
+}
+.divider span{
+  background:transparent;
+  padding:0 12px;
 }
 
-.form-control-icon input {
-    padding-left: 3rem;
-    padding-right: 1rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background-color: #f9fafb;
-    border: 1px solid #e5e7eb;
-    border-radius: 1rem;
+/* Small text link */
+.text-primary{ color:var(--gold-2); font-weight:700; }
+
+/* Aged decorative border for inputs and card */
+.aged-edge{
+  background-image:
+    linear-gradient(90deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02)),
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius:8px;
 }
 
-.form-control-icon input:focus {
-    background-color: white;
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+/* Accessibility and small sizes */
+@media (max-width:420px){
+  .login-card{ width:100%; padding:20px; margin:12px; }
+  .form-control{ padding-left:42px; font-size:13px; }
 }
 
-.form-control-icon .icon-left {
-    position: absolute;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #9ca3af;
-    width: 20px;
-    height: 20px;
+/* High-contrast outline for focus */
+.form-control:focus, .btn-primary-custom:focus, .social-btn:focus{
+  outline:3px solid rgba(139,27,27,0.12);
+  outline-offset:2px;
 }
 
-.form-control-icon .icon-right {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #9ca3af;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    transition: color 0.2s;
+/* Small decorative filigree using pseudo-element */
+.logo-container::after{
+  content:"";
+  display:block;
+  width:100%;
+  height:8px;
+  margin-top:10px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.03), rgba(0,0,0,0.01));
+  opacity:0.6;
 }
 
-.form-control-icon .icon-right:hover {
-    color: #4b5563;
-}
+/* Utility: reduzir ornamentos para 32x32 legibilidade */
+.small-cursor-friendly .logo-text{ font-size:18px; }
+.small-cursor-friendly .form-control{ padding-left:40px; }
 
-.btn-primary-custom {
-    background-color: #3b82f6;
-    border: none;
-    border-radius: 1rem;
-    padding: 1rem;
-    font-weight: 600;
-    transition: background-color 0.2s;
-}
-
-.btn-primary-custom:hover {
-    background-color: #2563eb;
-}
-
-.btn-ghost {
-    background: transparent;
-    border: none;
-    color: #6b7280;
-    transition: color 0.2s;
-}
-
-.btn-ghost:hover {
-    color: #3b82f6;
-}
-
-.divider {
-    position: relative;
-    margin: 2rem 0;
-}
-
-.divider::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background-color: #e5e7eb;
-}
-
-.divider span {
-    position: relative;
-    background: white;
-    padding: 0 1rem;
-    color: #6b7280;
-    font-size: 0.875rem;
-}
-
-.social-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.625rem 0.875rem;
-    border: 1px solid #e5e7eb;
-    border-radius: 0.75rem;
-    background-color: white;
-    transition: background-color 0.2s;
-    cursor: pointer;
-    height: 2.5rem;
-}
-
-.social-btn:hover {
-    background-color: #f9fafb;
-}
-
-.social-btn svg {
-    width: 20px;
-    height: 20px;
-}
+/* End of file */
